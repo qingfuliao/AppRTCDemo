@@ -29,8 +29,7 @@ public interface AppRTCClient {
     public final String roomId;
     public final boolean loopback;
     public final String urlParameters;
-    public RoomConnectionParameters(
-        String roomUrl, String roomId, boolean loopback, String urlParameters) {
+    public RoomConnectionParameters(String roomUrl, String roomId, boolean loopback, String urlParameters) {
       this.roomUrl = roomUrl;
       this.roomId = roomId;
       this.loopback = loopback;
@@ -77,7 +76,7 @@ public interface AppRTCClient {
    * Struct holding the signaling parameters of an AppRTC room.
    */
   class SignalingParameters {
-    public final List<PeerConnection.IceServer> iceServers;
+    public final List<PeerConnection.IceServer> iceServers;  //stun服务器地址信息，由pc_config得到
     public final boolean initiator; // 发起者
     public final String clientId;   // 客户端id，同一个房间可以有多个clientId
     public final String wssUrl;     // 比如wss:\/\/imtest.webrtc110.com:8089\/ws
@@ -85,9 +84,9 @@ public interface AppRTCClient {
     public final SessionDescription offerSdp; // sdp信息
     public final List<IceCandidate> iceCandidates;  //ice候选，可以有多个ice？
 
-    public SignalingParameters(List<PeerConnection.IceServer> iceServers, boolean initiator,
-        String clientId, String wssUrl, String wssPostUrl, SessionDescription offerSdp,
-        List<IceCandidate> iceCandidates) {
+    public SignalingParameters(List<PeerConnection.IceServer> iceServers,
+                               boolean initiator, String clientId, String wssUrl, String wssPostUrl,
+                               SessionDescription offerSdp, List<IceCandidate> iceCandidates) {
       this.iceServers = iceServers;
       this.initiator = initiator;
       this.clientId = clientId;

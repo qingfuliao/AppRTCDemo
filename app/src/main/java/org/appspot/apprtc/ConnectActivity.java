@@ -40,6 +40,7 @@ import org.json.JSONException;
 
 /**
  * Handles the initial setup where the user selects which room to join.
+ * 初始化相机和通信的一些参数，点击呼叫按钮时跳转到CallActivity界面进行呼叫；
  */
 public class ConnectActivity extends Activity {
   private static final String TAG = "ConnectActivity";

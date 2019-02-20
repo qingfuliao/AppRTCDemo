@@ -29,6 +29,7 @@ import java.util.LinkedList;
 
 /**
  * WebSocket client implementation.
+ * websockot封装
  *
  * <p>All public methods should be called from a looper executor thread
  * passed in a constructor, otherwise exception will be thrown.
@@ -237,6 +238,9 @@ public class WebSocketChannelClient {
     }
   }
 
+  /**
+   * Candidate、answer、offer、bye四大类消息
+   */
   private class WebSocketObserver implements WebSocketConnectionObserver {
     @Override
     public void onOpen() {
@@ -272,6 +276,10 @@ public class WebSocketChannelClient {
       });
     }
 
+    /**
+     * 响应消息
+     * @param payload
+     */
     @Override
     public void onTextMessage(String payload) {
       Log.d(TAG, "WSS->C: " + payload);

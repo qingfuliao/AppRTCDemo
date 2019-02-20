@@ -22,6 +22,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
+ * crash时抓异常，不会直接抛出异常
  * Singleton helper: install a default unhandled exception handler which shows
  * an informative dialog and kills the app.  Useful for apps whose
  * error-handling consists of throwing RuntimeExceptions.

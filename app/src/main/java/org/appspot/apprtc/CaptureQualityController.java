@@ -20,6 +20,7 @@ import org.webrtc.CameraEnumerationAndroid.CaptureFormat;
 
 /**
  * Control capture format based on a seekbar listener.
+ * 控制界面的画质分辨率大小，用seekbar显示；
  */
 public class CaptureQualityController implements SeekBar.OnSeekBarChangeListener {
   private final List<CaptureFormat> formats =

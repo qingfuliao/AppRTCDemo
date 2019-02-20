@@ -27,7 +27,8 @@ import org.webrtc.IceCandidate;
 import org.webrtc.SessionDescription;
 
 /**
- * Negotiates signaling for chatting with https://180.76.57.41 "rooms".
+ * 对WebSocketChannelClient使用，进行websockt方式发送数据
+ * Negotiates signaling for chatting with https://www.easywebrtc.com "rooms".
  * Uses the client<->server specifics of the apprtc AppEngine webapp.
  *
  * <p>To use: create an instance of this object (registering a message handler) and
@@ -135,14 +136,14 @@ public class WebSocketRTCClient implements AppRTCClient, WebSocketChannelEvents 
         + getQueryString(connectionParameters);
   }
 
-  private String getMessageUrl(
-      RoomConnectionParameters connectionParameters, SignalingParameters signalingParameters) {
+  private String getMessageUrl(RoomConnectionParameters connectionParameters,
+                               SignalingParameters signalingParameters) {
     return connectionParameters.roomUrl + "/" + ROOM_MESSAGE + "/" + connectionParameters.roomId
         + "/" + signalingParameters.clientId + getQueryString(connectionParameters);
   }
 
-  private String getLeaveUrl(
-      RoomConnectionParameters connectionParameters, SignalingParameters signalingParameters) {
+  private String getLeaveUrl(RoomConnectionParameters connectionParameters,
+      SignalingParameters signalingParameters) {
     return connectionParameters.roomUrl + "/" + ROOM_LEAVE + "/" + connectionParameters.roomId + "/"
         + signalingParameters.clientId + getQueryString(connectionParameters);
   }
@@ -226,6 +227,7 @@ public class WebSocketRTCClient implements AppRTCClient, WebSocketChannelEvents 
   }
 
   // Send Ice candidate to the other participant.
+  // 通过信令服务器进行发送
   @Override
   public void sendLocalIceCandidate(final IceCandidate candidate) {
     handler.post(new Runnable() {
@@ -248,6 +250,7 @@ public class WebSocketRTCClient implements AppRTCClient, WebSocketChannelEvents 
           }
         } else {
           // Call receiver sends ice candidates to websocket server.
+          Log.d(TAG, "sendLocalIceCandidate" + json.toString());
           wsClient.send(json.toString());
         }
       }

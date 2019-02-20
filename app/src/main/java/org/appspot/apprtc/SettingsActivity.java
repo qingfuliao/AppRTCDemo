@@ -20,6 +20,7 @@ import org.webrtc.Camera2Enumerator;
 import org.webrtc.voiceengine.WebRtcAudioUtils;
 
 /**
+ * 设置Activity
  * Settings activity for AppRTC.
  */
 public class SettingsActivity extends Activity implements OnSharedPreferenceChangeListener {

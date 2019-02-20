@@ -6,6 +6,7 @@
  *  tree. An additional intellectual property rights grant can be found
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
+ *  参数的界面显示，包括上行宽带和丢包率
  */
 
 package org.appspot.apprtc;

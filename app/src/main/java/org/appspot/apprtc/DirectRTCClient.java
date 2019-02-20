@@ -192,7 +192,7 @@ public class DirectRTCClient implements AppRTCClient, TCPChannelClient.TCPChanne
           reportError("Sending ICE candidate in non connected state.");
           return;
         }
-        sendMessage(json.toString());
+        sendMessage(json.toString()); //将本地产生的candidate发送给对方
       }
     });
   }

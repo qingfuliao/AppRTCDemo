@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
 /**
+ * 设置Fragment，一些音视频通讯的参数设置
  * Settings fragment for AppRTC.
  */
 public class SettingsFragment extends PreferenceFragment {

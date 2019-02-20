@@ -1,6 +1,9 @@
 # AppRTCDemo
 AppRTCDemo，base on njovy/AppRTCDemo
 
+# 注意事项
+1. **配置域名的时候一定要注意子域名的匹配，比如www.easywebrtc.com和easywebrtc.com是不同的，切记**
+
 # 重要的修改记录
 1. 匹配服务器ICE_SERVER_OVERRIDE不为none
 RoomParametersFetcher.java 添加函数

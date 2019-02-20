@@ -28,6 +28,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 显示CPU的当前使用性能数据
  * Simple CPU monitor.  The caller creates a CpuMonitor object which can then
  * be used via sampleCpuUtilization() to collect the percentual use of the
  * cumulative CPU capacity for all CPUs running at their nominal frequency.  3
